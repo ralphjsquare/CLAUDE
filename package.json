@@ -1,0 +1,9 @@
+{
+  "name": "zhouyi-divination",
+  "private": true,
+  "description": "周易占卜 — 离线单页应用",
+  "scripts": {
+    "test": "node --test",
+    "build:text": "python3 tools/build_text.py"
+  }
+}

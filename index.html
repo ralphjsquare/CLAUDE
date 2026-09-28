@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>周易占卜</title>
+<meta name="description" content="以铜钱法或蓍草法起卦，依朱熹取占规则解卦，附原文与白话解读。">
+<meta name="theme-color" content="#9e2a2b">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a href="#home" class="brand" data-go="home"><span class="brand-mark">☯</span> 周易占卜</a>
+  <nav>
+    <a href="#intro" data-go="intro">周易简介</a>
+    <a href="#history" data-go="history">占卜记录</a>
+  </nav>
+</header>
+
+<main>
+  <!-- 首页 -->
+  <section id="home" class="view">
+    <div class="hero">
+      <div class="hero-symbol" aria-hidden="true">䷀</div>
+      <h1>周易占卜</h1>
+      <p class="lead">静心问一事，六爻见其象。</p>
+      <p class="muted">以古法起卦，依朱熹《易学启蒙》的规则取占，附《周易》原文与白话解读。</p>
+      <div class="actions">
+        <button class="btn primary" data-go="method">开始占卜</button>
+        <button class="btn" data-go="intro">先了解周易</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 周易简介 -->
+  <section id="intro" class="view">
+    <h2>周易简介</h2>
+    <div class="card prose">
+      <h3>《周易》是什么</h3>
+      <p>《周易》成书于约三千年前的周代，分为「经」和「传」两部分。<b>经</b>是六十四卦的卦画、卦辞和爻辞；<b>传</b>是后人对经的解释，共十篇，称为「十翼」，相传出自孔子。本应用收录了经文，以及十翼中的《彖传》和《象传》。</p>
+
+      <h3>爻、卦与六十四卦</h3>
+      <p>构成卦的基本笔画叫<b>爻</b>：一条完整的横线是<b>阳爻</b>（⚊），中间断开的是<b>阴爻</b>（⚋）。三爻组成一个<b>八卦</b>，共八种：</p>
+      <div class="trigram-grid" id="trigram-grid"></div>
+      <p>两个八卦上下相叠，就组成六十四卦中的一卦。卦要<b>从下往上</b>读：最下面一爻叫「初」，往上依次是二、三、四、五，最上面一爻叫「上」。阳爻称「九」，阴爻称「六」，所以乾卦最下面一爻叫「初九」。</p>
+
+      <h3>本卦、变爻与之卦</h3>
+      <p>起卦时每一爻会得到 6、7、8、9 四个数之一：</p>
+      <table class="table">
+        <tr><th>数</th><th>名称</th><th>爻</th><th>会不会变</th></tr>
+        <tr><td>6</td><td>老阴</td><td>⚋ ×</td><td>会变，阴变阳</td></tr>
+        <tr><td>7</td><td>少阳</td><td>⚊</td><td>不变</td></tr>
+        <tr><td>8</td><td>少阴</td><td>⚋</td><td>不变</td></tr>
+        <tr><td>9</td><td>老阳</td><td>⚊ ○</td><td>会变，阳变阴</td></tr>
+      </table>
+      <p>六爻得到的卦叫<b>本卦</b>，代表当下的处境；会变的爻叫<b>变爻</b>；变爻变过之后得到的卦叫<b>之卦</b>（也叫变卦），代表事情可能的走向。根据变爻的多少，看本卦或之卦中不同的文字，这就是「取占」。</p>
+
+      <h3>占卜的意义</h3>
+      <p>《系辞》说：「君子居则观其象而玩其辞，动则观其变而玩其占。」卦像一面镜子，古人的文字帮你换个角度看自己的处境。<b>决定始终在你自己手里。</b></p>
+    </div>
+    <div class="actions"><button class="btn primary" data-go="method">开始占卜</button></div>
+  </section>
+
+  <!-- 选择起卦方法 -->
+  <section id="method" class="view">
+    <h2>选择起卦方法</h2>
+    <div class="choice-grid">
+      <button class="choice" data-method="coin">
+        <span class="choice-icon" aria-hidden="true">钱</span>
+        <b>铜钱法</b>
+        <span>三枚铜钱掷六次，自下而上成卦。简便易行，是最常用的方法，约需两分钟。</span>
+      </button>
+      <button class="choice" data-method="yarrow">
+        <span class="choice-icon" aria-hidden="true">蓍</span>
+        <b>蓍草法（大衍筮法）</b>
+        <span>《系辞》记载的古法：四十九根蓍草，三变成一爻，十八变成卦。更庄重，约需五分钟。</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- 占前准备 -->
+  <section id="prep" class="view">
+    <h2>占前准备</h2>
+    <p class="muted">古人占卜之前，先要身心安定、问题清楚。请逐条确认：</p>
+    <ol class="checklist" id="prep-list"></ol>
+    <div class="actions">
+      <button class="btn" data-go="method">返回</button>
+      <button class="btn primary" id="prep-next" disabled>我已准备好</button>
+    </div>
+  </section>
+
+  <!-- 写下问题 -->
+  <section id="question" class="view">
+    <h2>写下所问之事</h2>
+    <p class="muted">一事一问，越具体越好。例如：「这个月是否适合提出换岗申请？」而不是「我的未来怎样？」</p>
+    <textarea id="question-input" rows="3" maxlength="120" placeholder="请在这里写下你想问的一件事"></textarea>
+    <div class="warn" id="repeat-warn" hidden>
+      <p><b>「初筮告，再三渎，渎则不告。」</b>——《蒙》卦</p>
+      <p>你最近已经问过相似的问题：<span id="repeat-prev"></span>。同一件事反复占问，是对占卜的轻慢。建议回看上次的结果，好好体会。</p>
+      <div class="actions">
+        <button class="btn" id="repeat-view">查看上次结果</button>
+        <button class="btn subtle" id="repeat-continue">这是另一件事，继续</button>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn" data-go="prep">返回</button>
+      <button class="btn primary" id="question-next" disabled>下一步：静心</button>
+    </div>
+  </section>
+
+  <!-- 静心 -->
+  <section id="calm" class="view">
+    <h2>静心</h2>
+    <p class="muted center">跟着圆圈呼吸三次，心中默念你的问题：</p>
+    <p class="calm-question" id="calm-question"></p>
+    <div class="breath"><div class="breath-circle" id="breath-circle"></div><div class="breath-text" id="breath-text">准备</div></div>
+    <div class="actions center">
+      <button class="btn subtle" id="calm-skip">跳过</button>
+    </div>
+  </section>
+
+  <!-- 起卦 -->
+  <section id="cast" class="view">
+    <h2 id="cast-title">起卦</h2>
+    <p class="muted center" id="cast-hint"></p>
+    <div class="cast-layout">
+      <div class="cast-stage" id="cast-stage"></div>
+      <div class="builder-wrap">
+        <div class="builder" id="builder" aria-label="已得的爻"></div>
+        <p class="builder-caption">自下而上</p>
+      </div>
+    </div>
+    <div class="actions center">
+      <button class="btn primary big" id="cast-btn">开始</button>
+      <button class="btn primary big" id="cast-done" hidden>查看卦象</button>
+    </div>
+  </section>
+
+  <!-- 结果 -->
+  <section id="result" class="view">
+    <div id="result-body"></div>
+    <div class="actions center">
+      <button class="btn" data-go="history">占卜记录</button>
+      <button class="btn primary" data-go="home">返回首页</button>
+    </div>
+  </section>
+
+  <!-- 记录 -->
+  <section id="history" class="view">
+    <h2>占卜记录</h2>
+    <p class="muted">记录只保存在这台电脑的浏览器里。</p>
+    <div id="history-list"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  仅供参考与自省，不作为决策依据 · 原文据《周易正义》与朱熹《周易本义》对校
+</footer>
+
+<script src="data/text.js"></script>
+<script src="data/plain.js"></script>
+<script src="js/core.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
