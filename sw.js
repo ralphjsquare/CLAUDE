@@ -1,6 +1,7 @@
 // 离线缓存：安装后无网络也能使用。更新文件时修改 VERSION。
-var VERSION = 'yi-v1';
+var VERSION = 'yi-v2';
 var FILES = ['./', 'index.html', 'style.css', 'js/core.js', 'js/app.js', 'data/text.js', 'data/plain.js',
+  'data/plain-2.js', 'data/plain-3.js', 'data/plain-4.js', 'data/plain-5.js', 'data/plain-6.js', 'data/plain-7.js', 'data/plain-8.js',
   'icon.svg', 'icon-192.png', 'icon-512.png', 'manifest.webmanifest'];
 
 self.addEventListener('install', function (e) {
