@@ -54,7 +54,7 @@
 - 对校本：朱熹《周易本义》（四库全书本），小象取自此本，标点为本项目所加
 - 两本逐字对校，个别文字依通行本校正，校改记录见 `tools/build_text.py`
 - 电子文本取自 MIT 许可的 npm 包 `opencode-tianji@0.6.0`；古籍原文属公有领域
-- 白话解读为本项目撰写
+- 白话解读为本项目撰写，六十四卦全部完成（约 4.3 万字）
 
 ## 项目结构
 
@@ -64,7 +64,7 @@ style.css           样式（手机和电脑都适配，支持深色模式）
 js/core.js          核心逻辑：八卦、六十四卦、起卦、取占规则
 js/app.js           界面与流程
 data/text.js        原文（由 tools/build_text.py 生成）
-data/plain.js       白话解读
+data/plain*.js      白话解读（每个文件 8 卦，共 64 卦）
 tests/              单元测试
 tools/              生成原文数据的脚本
 sw.js, manifest.webmanifest, icon*   「安装为应用」与离线缓存

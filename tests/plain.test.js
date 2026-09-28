@@ -24,6 +24,6 @@ test('白话解读字段齐全，引用的爻辞与原文一致', () => {
   }
 });
 
-test('六十四卦的白话解读已全部完成', { todo: Object.keys(Yi.PLAIN).length < 64 }, () => {
+test('六十四卦的白话解读已全部完成', () => {
   assert.equal(Object.keys(Yi.PLAIN).length, 64);
 });
