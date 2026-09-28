@@ -64,6 +64,7 @@ ACCEPTED = {
     (15, "L4"), (29, "L6"), (63, "L4"),  # protected rare glyphs
 }
 XIAO_ACCEPTED = {
+    (26, 1),   # B: 利己 -> 利已（与爻辞一致）
     (26, 4),   # B: 无吉 -> 元吉
     (39, 2),   # B: 玉臣 -> 王臣
     (49, 2),   # 已日 -> 巳日 (consistent with 卦辞/爻辞)
