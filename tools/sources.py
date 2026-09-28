@@ -23,7 +23,8 @@ _cc = OpenCC("t2s")
 # Characters OpenCC would convert wrongly for this text.
 # Also keep glyphs whose simplified forms fall outside common Windows fonts.
 _PROTECT = {c: chr(0xE000 + i) for i, c in enumerate("乾餗纆繻撝")}
-_AFTER = {"彊": "强"}
+# 「乾胏」「乾肉」的乾读 gān（干燥），简体作干。
+_AFTER = {"彊": "强", "乾胏": "干胏", "乾肉": "干肉"}
 
 
 def to_simplified(s):
